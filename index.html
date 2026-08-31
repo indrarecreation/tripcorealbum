@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>INCHEON KIA | Employee Information</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #111827, #1e3a8a);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 500px;
+        background: #ffffff;
+        border-radius: 18px;
+        padding: 35px 30px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    }
+
+    .company {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .company h1 {
+        font-size: 30px;
+        color: #123c8c;
+        font-weight: 800;
+        letter-spacing: 1px;
+    }
+
+    .company p {
+        margin-top: 8px;
+        color: #666;
+        font-size: 14px;
+    }
+
+    .line {
+        width: 60px;
+        height: 4px;
+        background: #123c8c;
+        margin: 18px auto 25px;
+        border-radius: 10px;
+    }
+
+    .form-title {
+        text-align: center;
+        font-size: 21px;
+        color: #222;
+        margin-bottom: 25px;
+        font-weight: 700;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    input {
+        width: 100%;
+        padding: 14px 15px;
+        border: 1px solid #d1d5db;
+        border-radius: 10px;
+        font-size: 16px;
+        outline: none;
+        transition: 0.2s;
+    }
+
+    input:focus {
+        border-color: #123c8c;
+        box-shadow: 0 0 0 3px rgba(18,60,140,0.1);
+    }
+
+    input::placeholder {
+        color: #999;
+    }
+
+    .submit-btn {
+        width: 100%;
+        border: none;
+        padding: 15px;
+        background: #25D366;
+        color: white;
+        font-size: 17px;
+        font-weight: 700;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.2s;
+        margin-top: 5px;
+    }
+
+    .submit-btn:hover {
+        background: #1ebe5d;
+        transform: translateY(-1px);
+    }
+
+    .submit-btn:active {
+        transform: translateY(0);
+    }
+
+    .whatsapp-icon {
+        margin-right: 7px;
+    }
+
+    .footer {
+        text-align: center;
+        margin-top: 25px;
+        font-size: 12px;
+        color: #888;
+    }
+
+    @media (max-width: 480px) {
+        .container {
+            padding: 28px 20px;
+        }
+
+        .company h1 {
+            font-size: 26px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="company">
+        <h1>INCHEON KIA</h1>
+        <p>Employee Information Form</p>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="form-title">
+        Enter Your Details
+    </div>
+
+    <form id="employeeForm">
+
+        <!-- FULL NAME -->
+        <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input
+                type="text"
+                id="fullName"
+                placeholder="Enter your full name"
+                required
+            >
+        </div>
+
+        <!-- EMPLOYEE ID -->
+        <div class="form-group">
+            <label for="empId">Employee ID</label>
+            <input
+                type="text"
+                id="empId"
+                placeholder="Enter your employee ID"
+                required
+            >
+        </div>
+
+        <!-- GMAIL -->
+        <div class="form-group">
+            <label for="gmail">Gmail Address</label>
+            <input
+                type="email"
+                id="gmail"
+                placeholder="example@gmail.com"
+                pattern="[a-zA-Z0-9._%+-]+@gmail\.com"
+                title="Please enter a valid Gmail address"
+                required
+            >
+        </div>
+
+        <button type="submit" class="submit-btn">
+            <span class="whatsapp-icon">💬</span>
+            Submit & Continue to WhatsApp
+        </button>
+
+    </form>
+
+    <div class="footer">
+        © 2026 INCHEON KIA. All rights reserved.
+    </div>
+
+</div>
+
+
+<script>
+
+document.getElementById("employeeForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    // GET FORM DATA
+    const fullName = document.getElementById("fullName").value.trim();
+    const empId = document.getElementById("empId").value.trim();
+    const gmail = document.getElementById("gmail").value.trim();
+
+    // WHATSAPP NUMBER
+    // CHANGE THIS TO YOUR COMPANY/HR WHATSAPP NUMBER
+    // IMPORTANT: Include country code without + or spaces.
+    // Example India: 919876543210
+    const whatsappNumber = "6282844926";
+
+    // WHATSAPP MESSAGE
+    const message =
+`INCHEON KIA - EMPLOYEE INFORMATION
+
+Full Name: ${fullName}
+Employee ID: ${empId}
+Gmail Address: ${gmail}
+
+Submitted through INCHEON KIA Employee Information Form.`;
+
+    // CREATE WHATSAPP URL
+    const whatsappURL =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(message);
+
+    // REDIRECT TO WHATSAPP
+    window.location.href = whatsappURL;
+
+});
+
+</script>
+
+</body>
+</html>
