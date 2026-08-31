@@ -1,14 +1,24 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>INCHEON KIA | Employee Information</title>
-<meta name="description" content="INCHEON KIA Employee Information Form">
+
+<meta name="description"
+      content="INCHEON KIA Employee Information Form">
 
 <style>
+
+/* ==============================
+   BASIC RESET
+================================ */
+
 * {
     margin: 0;
     padding: 0;
@@ -16,240 +26,717 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
+/* ==============================
+   PAGE
+================================ */
+
 body {
+
     min-height: 100vh;
-    background: linear-gradient(135deg, #111827, #1e3a8a);
+
+    background:
+        linear-gradient(
+            135deg,
+            #111827,
+            #1e3a8a
+        );
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
     padding: 20px;
 }
 
+
+/* ==============================
+   MAIN BOX
+================================ */
+
 .container {
+
     width: 100%;
+
     max-width: 500px;
+
     background: #ffffff;
+
     border-radius: 18px;
+
     padding: 35px 30px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.25);
 }
 
+
+/* ==============================
+   COMPANY
+================================ */
+
 .company {
+
     text-align: center;
+
     margin-bottom: 10px;
 }
 
+
 .company h1 {
+
     font-size: 30px;
+
     color: #123c8c;
+
     font-weight: 800;
+
     letter-spacing: 1px;
 }
 
+
 .company p {
+
     margin-top: 8px;
+
     color: #666;
+
     font-size: 14px;
 }
 
+
+/* ==============================
+   BLUE LINE
+================================ */
+
 .line {
+
     width: 60px;
+
     height: 4px;
+
     background: #123c8c;
+
     margin: 18px auto 25px;
+
     border-radius: 10px;
 }
 
+
+/* ==============================
+   FORM TITLE
+================================ */
+
 .form-title {
+
     text-align: center;
+
     font-size: 21px;
+
     color: #222;
+
     margin-bottom: 25px;
+
     font-weight: 700;
 }
 
+
+/* ==============================
+   FORM GROUP
+================================ */
+
 .form-group {
+
     margin-bottom: 20px;
 }
 
+
 label {
+
     display: block;
+
     margin-bottom: 8px;
+
     color: #333;
+
     font-size: 15px;
+
     font-weight: 600;
 }
 
+
+/* ==============================
+   INPUT
+================================ */
+
 input {
+
     width: 100%;
+
     padding: 14px 15px;
-    border: 1px solid #d1d5db;
+
+    border:
+        1px solid #d1d5db;
+
     border-radius: 10px;
+
     font-size: 16px;
+
     outline: none;
+
     transition: 0.2s;
 }
 
+
 input:focus {
+
     border-color: #123c8c;
-    box-shadow: 0 0 0 3px rgba(18,60,140,0.1);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(18,60,140,0.1);
 }
 
+
 input::placeholder {
+
     color: #999;
 }
 
+
+/* ==============================
+   SUBMIT BUTTON
+================================ */
+
 .submit-btn {
+
     width: 100%;
+
     border: none;
+
     padding: 15px;
-    background: #25D366;
+
+    background: #123c8c;
+
     color: white;
+
     font-size: 17px;
+
     font-weight: 700;
+
     border-radius: 10px;
+
     cursor: pointer;
+
     transition: 0.2s;
+
     margin-top: 5px;
 }
 
+
 .submit-btn:hover {
-    background: #1ebe5d;
+
+    background: #0d2f70;
+
     transform: translateY(-1px);
 }
 
-.submit-btn:active {
-    transform: translateY(0);
+
+.submit-btn:disabled {
+
+    background: #999;
+
+    cursor: not-allowed;
+
+    transform: none;
 }
 
-.whatsapp-icon {
-    margin-right: 7px;
+
+/* ==============================
+   SUCCESS MESSAGE
+================================ */
+
+.success-message {
+
+    display: none;
+
+    text-align: center;
+
+    padding: 25px 10px;
 }
+
+
+.success-icon {
+
+    font-size: 50px;
+
+    margin-bottom: 15px;
+}
+
+
+.success-message h2 {
+
+    color: #15803d;
+
+    font-size: 24px;
+
+    margin-bottom: 10px;
+}
+
+
+.success-message p {
+
+    color: #555;
+
+    line-height: 1.5;
+
+    font-size: 15px;
+}
+
+
+/* ==============================
+   ERROR MESSAGE
+================================ */
+
+.error-message {
+
+    display: none;
+
+    color: #dc2626;
+
+    background: #fee2e2;
+
+    border-radius: 8px;
+
+    padding: 12px;
+
+    margin-bottom: 15px;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+
+/* ==============================
+   FOOTER
+================================ */
 
 .footer {
+
     text-align: center;
+
     margin-top: 25px;
+
     font-size: 12px;
+
     color: #888;
 }
 
+
+/* ==============================
+   MOBILE
+================================ */
+
 @media (max-width: 480px) {
+
     .container {
+
         padding: 28px 20px;
     }
 
+
     .company h1 {
+
         font-size: 26px;
     }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <div class="container">
 
+
+    <!-- COMPANY -->
+
     <div class="company">
+
         <h1>INCHEON KIA</h1>
-        <p>Employee Information Form</p>
+
+        <p>
+            Employee Information Form
+        </p>
+
     </div>
+
 
     <div class="line"></div>
 
-    <div class="form-title">
-        Enter Your Details
+
+    <!-- FORM -->
+
+    <div id="formSection">
+
+        <div class="form-title">
+
+            Enter Your Details
+
+        </div>
+
+
+        <div
+            id="errorMessage"
+            class="error-message">
+        </div>
+
+
+        <form id="employeeForm">
+
+
+            <!-- FULL NAME -->
+
+            <div class="form-group">
+
+                <label for="fullName">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    placeholder="Enter your full name"
+                    autocomplete="name"
+                    required>
+
+            </div>
+
+
+            <!-- EMPLOYEE ID -->
+
+            <div class="form-group">
+
+                <label for="empId">
+                    Employee ID
+                </label>
+
+                <input
+                    type="text"
+                    id="empId"
+                    name="empId"
+                    placeholder="Enter your employee ID"
+                    required>
+
+            </div>
+
+
+            <!-- GMAIL -->
+
+            <div class="form-group">
+
+                <label for="gmail">
+                    Gmail Address
+                </label>
+
+                <input
+                    type="email"
+                    id="gmail"
+                    name="gmail"
+                    placeholder="example@gmail.com"
+                    pattern="[a-zA-Z0-9._%+-]+@gmail\.com"
+                    title="Please enter a valid Gmail address"
+                    autocomplete="email"
+                    required>
+
+            </div>
+
+
+            <!-- SUBMIT -->
+
+            <button
+                type="submit"
+                class="submit-btn"
+                id="submitButton">
+
+                Submit Information
+
+            </button>
+
+
+        </form>
+
     </div>
 
-    <form id="employeeForm">
 
-        <div class="form-group">
-            <label for="fullName">Full Name</label>
-            <input
-                type="text"
-                id="fullName"
-                placeholder="Enter your full name"
-                required
-            >
+    <!-- SUCCESS -->
+
+    <div
+        id="successMessage"
+        class="success-message">
+
+        <div class="success-icon">
+            ✓
         </div>
 
-        <div class="form-group">
-            <label for="empId">Employee ID</label>
-            <input
-                type="text"
-                id="empId"
-                placeholder="Enter your employee ID"
-                required
-            >
-        </div>
+        <h2>
+            Information Submitted
+        </h2>
 
-        <div class="form-group">
-            <label for="gmail">Gmail Address</label>
-            <input
-                type="email"
-                id="gmail"
-                placeholder="example@gmail.com"
-                pattern="[a-zA-Z0-9._%+-]+@gmail\.com"
-                title="Please enter a valid Gmail address"
-                required
-            >
-        </div>
+        <p>
+            Your employee information has been
+            submitted successfully.
+        </p>
 
-        <button type="submit" class="submit-btn">
-            <span class="whatsapp-icon">💬</span>
-            Submit & Continue to WhatsApp
-        </button>
+        <p style="margin-top:10px;">
+            Thank you.
+        </p>
 
-    </form>
+    </div>
+
+
+    <!-- FOOTER -->
 
     <div class="footer">
-        © 2026 INCHEON KIA. All rights reserved.
+
+        © 2026 INCHEON KIA.
+        All rights reserved.
+
     </div>
+
 
 </div>
 
+
+
 <script>
 
-document.getElementById("employeeForm").addEventListener("submit", function(event) {
+
+/* ==========================================
+   GOOGLE APPS SCRIPT URL
+==========================================
+
+   REPLACE THE URL BELOW WITH YOUR
+   GOOGLE APPS SCRIPT WEB APP URL.
+
+========================================== */
+
+const GOOGLE_SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbyH1pfGbPmOF_fF8vcJ5kKQB3CletmEmuWVJ8nmZ5lGiemDiNotie52FnoAwpWV9xfg/exec";
+
+
+
+/* ==========================================
+   FORM SUBMISSION
+========================================== */
+
+document
+.getElementById("employeeForm")
+.addEventListener("submit", function(event) {
+
 
     event.preventDefault();
 
-    const fullName = document.getElementById("fullName").value.trim();
-    const empId = document.getElementById("empId").value.trim();
-    const gmail = document.getElementById("gmail").value.trim();
 
-    /*
-       WHATSAPP NUMBER
-       India country code = 91
+    /* GET VALUES */
 
-       Current number:
-       6282844926
+    const fullName =
+        document
+        .getElementById("fullName")
+        .value
+        .trim();
 
-       Therefore:
-       916282844926
-    */
-    const whatsappNumber = "916282844926";
 
-    const message =
-`INCHEON KIA - EMPLOYEE INFORMATION
+    const empId =
+        document
+        .getElementById("empId")
+        .value
+        .trim();
 
-Full Name: ${fullName}
-Employee ID: ${empId}
-Gmail Address: ${gmail}
 
-Submitted through INCHEON KIA Employee Information Form.`;
+    const gmail =
+        document
+        .getElementById("gmail")
+        .value
+        .trim();
 
-    const whatsappURL =
-        "https://wa.me/" +
-        whatsappNumber +
-        "?text=" +
-        encodeURIComponent(message);
 
-    window.location.href = whatsappURL;
+
+    /* BASIC VALIDATION */
+
+    if (!fullName || !empId || !gmail) {
+
+        showError(
+            "Please complete all required fields."
+        );
+
+        return;
+    }
+
+
+
+    /* GMAIL VALIDATION */
+
+    const gmailPattern =
+        /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+
+
+    if (!gmailPattern.test(gmail)) {
+
+        showError(
+            "Please enter a valid Gmail address."
+        );
+
+        return;
+    }
+
+
+
+    /* DISABLE BUTTON */
+
+    const submitButton =
+        document.getElementById(
+            "submitButton"
+        );
+
+
+    submitButton.disabled = true;
+
+
+    submitButton.textContent =
+        "Submitting...";
+
+
+
+    /* REMOVE ERROR */
+
+    document
+        .getElementById("errorMessage")
+        .style.display = "none";
+
+
+
+    /* PREPARE DATA */
+
+    const formData = new URLSearchParams();
+
+    formData.append(
+        "fullName",
+        fullName
+    );
+
+    formData.append(
+        "empId",
+        empId
+    );
+
+    formData.append(
+        "gmail",
+        gmail
+    );
+
+
+
+    /* SEND TO GOOGLE SHEETS */
+
+    fetch(
+        GOOGLE_SCRIPT_URL,
+        {
+
+            method: "POST",
+
+            mode: "no-cors",
+
+            headers: {
+                "Content-Type":
+                    "application/x-www-form-urlencoded"
+            },
+
+            body: formData.toString()
+
+        }
+    )
+    .then(function() {
+
+        /*
+           Because Google Apps Script does not
+           expose the response to the browser
+           in no-cors mode, we display success
+           after the request has been sent.
+        */
+
+        showSuccess();
+
+    })
+    .catch(function(error) {
+
+        console.error(error);
+
+        showError(
+            "Unable to submit the information. Please try again."
+        );
+
+        submitButton.disabled = false;
+
+        submitButton.textContent =
+            "Submit Information";
+
+    });
+
 
 });
 
+
+
+/* ==========================================
+   SUCCESS
+========================================== */
+
+function showSuccess() {
+
+    document
+        .getElementById("formSection")
+        .style.display = "none";
+
+
+    document
+        .getElementById("successMessage")
+        .style.display = "block";
+
+}
+
+
+
+/* ==========================================
+   ERROR
+========================================== */
+
+function showError(message) {
+
+    const errorBox =
+        document.getElementById(
+            "errorMessage"
+        );
+
+
+    errorBox.textContent = message;
+
+
+    errorBox.style.display = "block";
+
+}
+
 </script>
 
+
 </body>
+
 </html>
-```
