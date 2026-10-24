@@ -2,7 +2,7 @@
   Admin frontend. Set API_URL to the same deployed Apps Script URL as app.js.
   Authentication and permission checks happen in Code.gs, not in this file.
 */
-const ADMIN_CONFIG = { API_URL: "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE" };
+const ADMIN_CONFIG = { API_URL: "https://script.google.com/macros/s/AKfycbzScsJULF_qlURlwPTN790UtKTz9oV5nbD-BFNQtN1-b9UziSNmNXSqOQ_U3ftQad0/exec" };
 const A = s => document.querySelector(s);
 const adminState = { token:"", email:"", trips:[], settings:{}, photos:[] };
 
