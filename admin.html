@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#11110f">
+  <title>Journal Admin — Ride Journal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header class="admin-top"><a class="admin-brand" href="index.html"><span class="brand-symbol">RJ</span><span>JOURNAL <b>CONTROL ROOM</b></span></a><span class="secure-label">● PRIVATE ADMIN</span></header>
+  <main class="admin-wrap">
+    <section class="login-panel" id="login-panel">
+      <p class="eyebrow">RIDE JOURNAL / ADMIN ACCESS</p><h1>BACKSTAGE<br><em>PASS.</em></h1>
+      <p class="muted">Sign in to add new ride stories, upload photographs, and maintain the archive.</p>
+      <form id="login-form">
+        <label>ADMIN EMAIL<input type="email" id="login-email" autocomplete="username" required placeholder="you@example.com"></label>
+        <label>PASSWORD<input type="password" id="login-password" autocomplete="current-password" required placeholder="Your admin password"></label>
+        <button class="primary" type="submit">SIGN IN <span>↗</span></button>
+        <p class="form-message" id="login-message" role="status"></p>
+      </form>
+      <p class="security-note">Admin credentials are verified by Google Apps Script. Do not share this page's login details.</p>
+    </section>
+
+    <section class="dashboard hidden" id="dashboard">
+      <div class="dashboard-head"><div><p class="eyebrow">THE EDITOR'S DESK</p><h1>YOUR <em>JOURNAL.</em></h1></div><button class="outline" id="logout-button">LOG OUT</button></div>
+      <div class="tabs"><button class="tab active" data-tab="trip-editor">TRIP EDITOR</button><button class="tab" data-tab="site-editor">SITE DETAILS</button><button class="tab" data-tab="published">PUBLISHED ARCHIVE</button></div>
+
+      <section class="tab-panel" id="trip-editor">
+        <div class="panel-title"><div><p class="eyebrow">NEW STORY / EDIT STORY</p><h2>ADD TO THE <em>ARCHIVE.</em></h2></div><span class="step-number">01</span></div>
+        <form id="trip-form" class="editor-form">
+          <input type="hidden" id="trip-id">
+          <div class="form-grid">
+            <label>TRIP TITLE *<input id="trip-title" required maxlength="140" placeholder="The road to Munnar"></label>
+            <label>DESTINATION *<input id="trip-destination" required maxlength="140" placeholder="Munnar, Kerala"></label>
+            <label>TRIP DATE<input id="trip-date" type="date"></label>
+            <label>CATEGORY<input id="trip-category" maxlength="60" placeholder="Mountain ride / Coastal ride"></label>
+            <label class="full">SHORT CAPTION<input id="trip-short" maxlength="220" placeholder="One line that captures the journey"></label>
+            <label class="full">TRIP STORY / LONG CAPTION<textarea id="trip-story" rows="6" placeholder="Write the story behind this ride..."></textarea></label>
+            <label>STATUS<select id="trip-status"><option value="published">Publish on website</option><option value="draft">Save as draft</option></select></label>
+            <label>COVER PHOTO<select id="cover-select"><option value="">Use first uploaded photo</option></select></label>
+          </div>
+          <div class="upload-box">
+            <div class="upload-head"><div><p class="eyebrow">VISUAL ARCHIVE</p><h3>PHOTOGRAPHS <em>FROM THE RIDE.</em></h3><p class="muted">Choose multiple images. Images are resized before upload to make mobile publishing easier.</p></div><label class="upload-button">＋ ADD PHOTOS<input type="file" id="photo-input" accept="image/*" multiple></label></div>
+            <div id="photo-preview" class="photo-preview"><div class="empty-upload">No photos selected yet. Add at least one image for a visual trip story.</div></div>
+          </div>
+          <div class="editor-actions"><button class="primary" id="save-trip-button" type="submit">SAVE TRIP STORY <span>↗</span></button><button class="outline" type="button" id="reset-trip-button">CLEAR FORM</button><p class="form-message" id="trip-message" role="status"></p></div>
+        </form>
+      </section>
+
+      <section class="tab-panel hidden" id="site-editor">
+        <div class="panel-title"><div><p class="eyebrow">HOMEPAGE / GROUP IDENTITY</p><h2>SET THE <em>SCENE.</em></h2></div><span class="step-number">02</span></div>
+        <form id="settings-form" class="editor-form">
+          <div class="form-grid">
+            <label>GROUP / WEBSITE NAME<input id="setting-name" required placeholder="RIDE JOURNAL"></label>
+            <label>ESTABLISHED YEAR<input id="setting-year" type="number" min="1900" max="2100" placeholder="2020"></label>
+            <label class="full">HERO IMAGE URL (OPTIONAL)<input id="setting-hero" type="url" placeholder="https://..."></label>
+            <label class="full">HERO DESCRIPTION<textarea id="setting-hero-description" rows="3" placeholder="A short introduction shown on the homepage"></textarea></label>
+            <label>ABOUT HEADING<input id="setting-about-heading" placeholder="NOT JUST A RIDE. A WAY OF LIFE."></label>
+            <label>SHORT GROUP INTRODUCTION<input id="setting-about-short" placeholder="A crew connected by open roads..."></label>
+            <label class="full">ABOUT THE GROUP<textarea id="setting-about-long" rows="4" placeholder="Tell visitors about your group"></textarea></label>
+            <label class="full">FOOTER NOTE<input id="setting-footer" placeholder="Made from miles, memories, and good company."></label>
+          </div>
+          <div class="editor-actions"><button class="primary" type="submit">SAVE WEBSITE DETAILS <span>↗</span></button><p class="form-message" id="settings-message" role="status"></p></div>
+        </form>
+      </section>
+
+      <section class="tab-panel hidden" id="published">
+        <div class="panel-title"><div><p class="eyebrow">ALL STORIES / DRAFTS INCLUDED</p><h2>THE <em>ARCHIVE.</em></h2></div><span class="step-number">03</span></div>
+        <div id="admin-trip-list" class="admin-trip-list"><p class="muted">Loading trips…</p></div>
+      </section>
+    </section>
+  </main>
+  <footer class="admin-footer"><span>RIDE JOURNAL / EDITORIAL SYSTEM</span><a href="index.html">← BACK TO PUBLIC WEBSITE</a></footer>
+  <script src="admin.js"></script>
+</body>
+</html>
