@@ -45,7 +45,7 @@ async function refreshAdminData(){
 }
 function fillSettings(){
   const s=adminState.settings;
-  A("#setting-name").value=s.groupName||"RIDE JOURNAL";A("#setting-year").value=s.establishedYear||2020;
+  A("#setting-name").value=s.groupName||"RIDE JOURNAL";A("#setting-year").value=s.establishedYear||2026;
   A("#setting-hero").value=s.heroImage||"";A("#setting-hero-description").value=s.heroDescription||"";
   A("#setting-about-heading").value=s.aboutHeading||"NOT JUST A RIDE. A WAY OF LIFE.";
   A("#setting-about-short").value=s.aboutShort||"";A("#setting-about-long").value=s.aboutLong||"";
