@@ -7,7 +7,7 @@ const CONFIG = {
   API_URL: "https://script.google.com/macros/s/AKfycbzScsJULF_qlURlwPTN790UtKTz9oV5nbD-BFNQtN1-b9UziSNmNXSqOQ_U3ftQad0/exec",
   GROUP_NAME: "TRIP CORE",
   ESTABLISHED_YEAR: 2026,
-  HERO_IMAGE: "https://github.com/indrarecreation/tripcore/blob/main/IMG_9555.jpeg?raw=true"
+  HERO_IMAGE: "https://github.com/indrarecreation/tripcore/blob/main/IMG_9544.jpeg?raw=true"
 };
 
 const $ = selector => document.querySelector(selector);
