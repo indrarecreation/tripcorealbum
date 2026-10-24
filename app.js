@@ -4,7 +4,7 @@
   Example: https://script.google.com/macros/s/DEPLOYMENT_ID/exec
 */
 const CONFIG = {
-  API_URL: "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE",
+  API_URL: "https://script.google.com/macros/s/AKfycbzScsJULF_qlURlwPTN790UtKTz9oV5nbD-BFNQtN1-b9UziSNmNXSqOQ_U3ftQad0/exec",
   GROUP_NAME: "RIDE JOURNAL",
   ESTABLISHED_YEAR: 2020,
   HERO_IMAGE: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=2200&q=85"
